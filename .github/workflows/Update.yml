@@ -22,11 +22,22 @@ jobs:
       id: date
       run: echo "::set-output name=date::$(date +'%Y-%m-%d %H:%M:%S CST')"
 
+    - name: clean faker3
+      run: |
+        # clean faker3
+        rm -rf faker3;
+
+
+
+    - name: Checkout faker3 repo
+      uses: actions/checkout@v4
+      with:
+        repository: shufflewzc/faker3
+        path: faker3
+
     - name: Update
       run: |
         # faker3
-        rm -rf faker3;
-        git clone https://github.com/shufflewzc/faker3.git faker3;
         cat job_list.txt|while read line
         do
             if [ "${line}" -ne "" ];then
