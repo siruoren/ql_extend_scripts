@@ -1,0 +1,2 @@
+jdCookie.js
+jd_beanSign.js
