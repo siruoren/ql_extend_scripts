@@ -40,9 +40,9 @@ jobs:
         # faker3
         cat job_list.txt|while read line
         do
-            if [ "${line}" -ne "" ];then
+
               cp faker3/${line}  .;
-            fi;
+
         done;
         rm -rf faker3;
 
