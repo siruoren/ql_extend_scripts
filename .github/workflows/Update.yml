@@ -27,7 +27,7 @@ jobs:
         # faker3
         rm -rf faker3;
         git clone https://github.com/shufflewzc/faker3.git faker3;
-        cat job_list|while read line
+        cat job_list.txt|while read line
         do
             if [ "${line}" -ne "" ];then
               cp faker3/${line}  .;
