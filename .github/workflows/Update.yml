@@ -6,7 +6,7 @@ on:
   schedule:
     - cron: '0 1 * * *'
   push:
-    branches: [ "Files" ]
+    branches: [ "main" ]
 
 env:
   TZ: Asia/Shanghai
