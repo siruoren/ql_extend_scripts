@@ -1,0 +1,49 @@
+name: Update
+
+on:
+  watch:
+    types: [started]
+  schedule:
+    - cron: '0 1 * * *'
+  push:
+    branches: [ "Files" ]
+
+env:
+  TZ: Asia/Shanghai
+
+jobs:
+  Update:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: GetTime
+      id: date
+      run: echo "::set-output name=date::$(date +'%Y-%m-%d %H:%M:%S CST')"
+
+    - name: Update
+      run: |
+        # faker3
+        rm -rf faker3;
+        git clone https://github.com/shufflewzc/faker3.git faker3;
+        cat job_list|while read line
+        do
+            if [ "${line}" -ne "" ];then
+              cp faker3/${line}  .;
+            fi;
+        done;
+        rm -rf faker3;
+
+      
+    - name: Clean
+      run: |
+        git config --local user.email "actions@github.com"
+        git config --local user.name "GitHub Actions"
+        git checkout --orphan latest_branch
+        git add -A
+        git commit -am "${{ steps.date.outputs.date }}"
+
+
+    - name: Push
+      run: git push -f origin main
