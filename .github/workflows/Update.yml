@@ -40,7 +40,7 @@ jobs:
         # faker3
         cat job_list.txt|while read line
         do
-
+              echo "cp ${line}" 
               cp -r faker3/${line}  .;
 
         done;
