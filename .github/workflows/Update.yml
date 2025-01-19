@@ -38,12 +38,12 @@ jobs:
     - name: Update
       run: |
         # faker3
-        cat job_list.txt|while read line
+        while read line
         do
               echo "cp ${line}" 
               cp -r faker3/${line}  .;
 
-        done;
+        done < job_list.txt;
         rm -rf faker3;
 
       
