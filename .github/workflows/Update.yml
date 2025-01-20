@@ -46,6 +46,8 @@ jobs:
         done < job_list.txt;
         rm -rf faker3;
 
+        sed -i 's/^COMMIT.*/COMMIT: `date`/g' README.md;
+
       
     - name: Clean
       run: |
