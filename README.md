@@ -8,4 +8,4 @@ ql repo https://git.metauniverse-cn.com/https://github.com/siruoren/ql_extend_sc
 
 # UPDATE TIME
 
-COMMIT: 123456
+COMMIT: `date`
