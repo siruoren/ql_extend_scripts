@@ -40,9 +40,10 @@ jobs:
         # faker3
         while read line
         do
+           if [ "$line" != "" ];then
               echo "cp ${line}" 
-              cp -r faker3/${line}  .;
-
+              cp -r faker3/${line}
+           fi
         done < job_list.txt;
         rm -rf faker3;
 
