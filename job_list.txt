@@ -1,7 +1,6 @@
 jdCookie.js
 jd_beanSign.js
 utils
-jd_jr_sign.js
 
 
 
