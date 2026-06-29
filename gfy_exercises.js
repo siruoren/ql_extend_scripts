@@ -4,7 +4,7 @@
 // @version      2026-06-29
 // @description  try to take over the world!
 // @author       You
-// @match        https://*/*
+// @match        https://app.goodfull.vip/v2.0/knowledge/knowledgeDetail?id=*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        none
 // ==/UserScript==
